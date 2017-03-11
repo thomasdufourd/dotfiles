@@ -23,13 +23,19 @@ brew 'homebrew/dupes/grep'
 
 # Install Binaries
 brew 'awscli'
+brew 'erlang'
 brew 'git'
+brew 'go'
 brew 'hub'
-brew 'tree'
 brew 'mackup'
 brew 'mas'
+brew 'mongodb'
+brew 'nginx'
+brew 'ngrep'
 brew 'node'
+brew 'openssl'
 brew 'trash'
+brew 'tree'
 brew 'wget'
 
 # Development
