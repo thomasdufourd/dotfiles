@@ -1,0 +1,32 @@
+[user]
+    name = Thomas Dufourd
+    email = thomas.dufourd@bekk.no
+[color]
+    diff = auto
+    status = auto
+    branch = auto
+[alias]
+    ci = commit
+    co = checkout
+    st = status
+    br = branch
+    tree = log --graph --pretty=oneline --abbrev-commit
+[gui]
+    recentrepo =
+[apply]
+    whitespace = nowarn
+[mergetool "diffmerge"]
+    cmd = diffmerge.sh --merge --result=$MERGED $LOCAL $BASE $REMOTE
+    trustExitCode = false
+[i18n]
+    commitencoding = UTF-8
+    logoutputencoding = UTF-8
+[push]
+    default = tracking
+
+[credential]
+	helper = osxkeychain
+[filter "media"]
+	clean = git media clean %f
+	smudge = git media smudge %f
+	required = true
