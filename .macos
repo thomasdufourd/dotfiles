@@ -1,5 +1,14 @@
 #!/usr/bin/env bash
 
+### TODO
+# enable drag and drop
+# cursor speed
+# cmd + ' instead of cmd + ` for windows switch
+
+
+
+
+
 # Thanks to Mathias Bynens! https://mths.be/macos
 
 # Ask for the administrator password upfront
@@ -303,5 +312,3 @@ for app in "Activity Monitor" "Address Book" "Calendar" "Contacts" "cfprefsd" \
 done
 
 echo "Done. Note that some of these changes require a logout/restart to take effect."
-
-

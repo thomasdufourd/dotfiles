@@ -1,3 +1,8 @@
+export ZSH_DEBUG="ON"
+
+if [[ "$ZSH_DEBUG" -eq "ON" ]]; then echo "[DEBUG] debug mode is on"; fi
+
+echo "[DEBUG] .zshrc initializing ...."
 # Path to your dotfiles installation.
 export DOTFILES=$HOME/.dotfiles
 
@@ -54,7 +59,19 @@ ZSH_CUSTOM=$DOTFILES
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(composer git git-extras httpie github npm sublime vagrant)
 
+# Environment variables
+if [[ "$ZSH_DEBUG" -eq "ON" ]]; then echo "[DEBUG] setting up some environment variables"; fi
+export JAVA_HOME="$(/usr/libexec/java_home -v 1.8)"
+export MAVEN_HOME=$HOME/bin/apache-maven-3.3.9
+
+# Maven settings
+export MAVEN_OPTS="-Xmx1024M -XX:MaxPermSize=1024m -Dfile.encoding=UTF-8"
+### debug ###MAVEN_OPTS="$MAVEN_OPTS -Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=5005"
+export M2_REPO=$HOME/.m2/repository
+
+
 # Activate Oh-My-Zsh
+if [[ "$ZSH_DEBUG" -eq "ON" ]]; then echo "[DEBUG] activating Oh My Zsh!"; fi
 source $ZSH/oh-my-zsh.sh
 
 # You may need to manually set your language environment
@@ -73,3 +90,9 @@ source $ZSH/oh-my-zsh.sh
 
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
+
+
+# miscellanous
+#-------------
+# the following makes it possible to comment a command-line, just like bash
+setopt interactivecomments

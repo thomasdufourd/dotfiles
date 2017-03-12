@@ -1,4 +1,7 @@
-## --> echo "[DEBUG] setting up aliases from .dotfiles/aliases.zsh"
+if [[ "$ZSH_DEBUG" -eq "ON" ]]; then echo "[DEBUG] setting up aliases from .dotfiles/aliases.zsh"; fi
+
+# re-init .zshrc
+alias reloadzshrc="cp $HOME/.dotfiles/.zshrc $HOME/.zshrc"
 
 # Shortcuts
 alias copyssh="pbcopy < $HOME/.ssh/id_rsa.pub"
