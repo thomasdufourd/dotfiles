@@ -1,8 +1,11 @@
-export ZSH_DEBUG="ON"
+## Set ZSH_DEBUG to ON/OFF
+export ZSH_DEBUG="OFF"
 
-if [[ "$ZSH_DEBUG" -eq "ON" ]]; then echo "[DEBUG] debug mode is on"; fi
+if [[ "$ZSH_DEBUG" == "ON" ]]; then echo "[DEBUG] debug mode is on"; fi
 
-echo "[DEBUG] .zshrc initializing ...."
+if [[ "$ZSH_DEBUG" == "ON" ]]; then echo " "; fi
+if [[ "$ZSH_DEBUG" == "ON" ]]; then echo "[DEBUG] initializing .zshrc"; fi
+
 # Path to your dotfiles installation.
 export DOTFILES=$HOME/.dotfiles
 
@@ -60,7 +63,7 @@ ZSH_CUSTOM=$DOTFILES
 plugins=(composer git git-extras httpie github npm sublime vagrant)
 
 # Environment variables
-if [[ "$ZSH_DEBUG" -eq "ON" ]]; then echo "[DEBUG] setting up some environment variables"; fi
+if [[ "$ZSH_DEBUG" == "ON" ]]; then echo "[DEBUG] setting up some environment variables"; fi
 export JAVA_HOME="$(/usr/libexec/java_home -v 1.8)"
 export MAVEN_HOME=$HOME/bin/apache-maven-3.3.9
 
@@ -71,7 +74,7 @@ export M2_REPO=$HOME/.m2/repository
 
 
 # Activate Oh-My-Zsh
-if [[ "$ZSH_DEBUG" -eq "ON" ]]; then echo "[DEBUG] activating Oh My Zsh!"; fi
+if [[ "$ZSH_DEBUG" == "ON" ]]; then echo "[DEBUG] activating Oh My Zsh!"; fi
 source $ZSH/oh-my-zsh.sh
 
 # You may need to manually set your language environment

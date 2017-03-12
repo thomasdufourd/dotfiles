@@ -1,4 +1,4 @@
-if [[ "$ZSH_DEBUG" -eq "ON" ]]; then echo "[DEBUG] setting up aliases from .dotfiles/aliases.zsh"; fi
+if [[ "$ZSH_DEBUG" == "ON" ]]; then echo "[DEBUG] setting up aliases from .dotfiles/aliases.zsh"; fi
 
 # re-init .zshrc
 alias reloadzshrc="cp $HOME/.dotfiles/.zshrc $HOME/.zshrc"
