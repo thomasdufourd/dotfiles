@@ -1,3 +1,5 @@
+## --> echo "[DEBUG] setting up PATH from .dotfiles/path.sh"
+
 # Load Node global installed binaries
 export PATH="$HOME/.node/bin:$PATH"
 
