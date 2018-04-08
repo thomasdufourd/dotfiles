@@ -27,6 +27,11 @@ if [[ "$ZSH_DEBUG" == "ON" ]]; then echo "[DEBUG] PATH #3: $PATH"; fi
 
 export PATH="$MAVEN_HOME/bin:$PATH"
 if [[ "$ZSH_DEBUG" == "ON" ]]; then echo "[DEBUG] PATH #4: $PATH"; fi
+
+export PATH="$POSTGRES_HOME/bin:$PATH"
+if [[ "$ZSH_DEBUG" == "ON" ]]; then echo "[DEBUG] PATH #5: $PATH"; fi
+
+
 # Local bin directories before anything else
 export PATH="/usr/local/bin:/usr/local/sbin:$PATH:$ORIGINAL_PATH"
-if [[ "$ZSH_DEBUG" == "ON" ]]; then echo "[DEBUG] PATH #5: $PATH"; fi
+if [[ "$ZSH_DEBUG" == "ON" ]]; then echo "[DEBUG] PATH #6: $PATH"; fi

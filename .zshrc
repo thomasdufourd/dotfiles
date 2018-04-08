@@ -66,6 +66,7 @@ plugins=(composer git git-extras httpie github npm sublime vagrant)
 if [[ "$ZSH_DEBUG" == "ON" ]]; then echo "[DEBUG] setting up some environment variables"; fi
 export JAVA_HOME="$(/usr/libexec/java_home -v 1.8)"
 export MAVEN_HOME=$HOME/bin/apache-maven-3.3.9
+export POSTGRES_HOME=/Applications/Postgres.app/Contents/Versions/latest
 
 # Maven settings
 export MAVEN_OPTS="-Xmx1024M -XX:MaxPermSize=1024m -Dfile.encoding=UTF-8"
