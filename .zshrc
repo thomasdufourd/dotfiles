@@ -60,7 +60,7 @@ ZSH_CUSTOM=$DOTFILES
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(composer git git-extras httpie github npm sublime vagrant kubectl)
+plugins=(composer git git-extras httpie github npm sublime vagrant kubectl kube-ps1)
 
 # Environment variables
 if [[ "$ZSH_DEBUG" == "ON" ]]; then echo "[DEBUG] setting up some environment variables"; fi
@@ -118,7 +118,8 @@ export PKG_CONFIG_PATH="/usr/local/opt/openssl/lib/pkgconfig"
 #---------------
 export KUBECONFIG="/Users/thomasdufourd/Code/nav/kubeconfigs/config"
 
-
+# Enable 'kube-ps1'
+PROMPT=$PROMPT'$(kube_ps1) '
 
 # miscellanous
 #-------------
