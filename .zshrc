@@ -60,11 +60,12 @@ ZSH_CUSTOM=$DOTFILES
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(composer git git-extras httpie github npm sublime vagrant)
+plugins=(composer git git-extras httpie github npm sublime vagrant kubectl)
 
 # Environment variables
 if [[ "$ZSH_DEBUG" == "ON" ]]; then echo "[DEBUG] setting up some environment variables"; fi
-export JAVA_HOME="$(/usr/libexec/java_home -v 1.8)"
+#export JAVA_HOME="$(/usr/libexec/java_home -v 1.8)"
+export JAVA_HOME="/Library/Java/JavaVirtualMachines/openjdk-11.0.2.jdk/Contents/Home"
 export MAVEN_HOME=$HOME/bin/apache-maven-3.3.9
 export POSTGRES_HOME=/Applications/Postgres.app/Contents/Versions/latest
 
@@ -97,6 +98,27 @@ source $ZSH/oh-my-zsh.sh
 
 export NVM_DIR="$HOME/.nvm"
   . "/usr/local/opt/nvm/nvm.sh"
+
+# jenv (installed with brew
+export PATH="$HOME/.jenv/bin:$PATH"
+#eval "$(jenv init -)"
+#if which jenv > /dev/null; then eval "$(jenv init -)"; fi
+
+# openssl 
+#--------
+# Set openssl first on PATH
+export PATH="/usr/local/opt/openssl/bin:$PATH"
+#For compilers to find openssl, let's export:
+export LDFLAGS="-L/usr/local/opt/openssl/lib"
+export CPPFLAGS="-I/usr/local/opt/openssl/include"
+# For pkg-config to find openssl, let's set:
+export PKG_CONFIG_PATH="/usr/local/opt/openssl/lib/pkgconfig"
+
+# kubectl (NAV) 
+#---------------
+export KUBECONFIG="/Users/thomasdufourd/Code/nav/kubeconfigs/config"
+
+
 
 # miscellanous
 #-------------
