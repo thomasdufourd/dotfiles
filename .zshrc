@@ -118,6 +118,11 @@ export PKG_CONFIG_PATH="/usr/local/opt/openssl/lib/pkgconfig"
 #---------------
 export KUBECONFIG="/Users/thomasdufourd/Code/nav/kubeconfigs/config"
 
+# Vault (NAV)
+# -----------
+#export VAULT_ADDR="https://vault.adeo.no" 
+export VAULT_ADDR="http://localhost:8200"
+
 # Enable 'kube-ps1'
 PROMPT=$PROMPT'$(kube_ps1) '
 

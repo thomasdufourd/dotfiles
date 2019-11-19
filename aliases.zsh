@@ -24,3 +24,16 @@ alias vhalt="vagrant halt"
 alias vssh="vagrant ssh"
 alias vreload="vagrant reload"
 alias vrebuild="vagrant destroy --force && vagrant up"
+
+# Kubernetes
+alias k_context_dev-fss="kubectl config use-context dev-fss"
+alias k_context_dev-sbs="kubectl config use-context dev-sbs"
+alias k_context_prod-fss="kubectl config use-context prod-fss"
+alias k_context_prod-sbs="kubectl config use-context prod-sbs"
+alias k_pods_teamtag="kubectl get pods -l team=teamtag"
+alias k_logs_pod="kubectl log -f"
+alias k_apply_dev="kubectl apply -f dev-nais.yaml"
+
+# Utils
+alias listen_p="lsof -i -P -n | grep LISTEN"
+
