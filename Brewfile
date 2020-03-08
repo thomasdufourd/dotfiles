@@ -1,9 +1,9 @@
 # Taps
-tap 'caskroom/cask'
-tap 'caskroom/fonts'
-tap 'caskroom/versions'
+tap 'homebrew/cask'
+tap 'homebrew/cask-eid'
+tap 'homebrew/cask-fonts'
+tap 'homebrew/cask-versions'
 tap 'homebrew/bundle'
-tap 'homebrew/dupes'
 
 # Install ZSH
 brew 'zsh'
@@ -43,7 +43,7 @@ cask 'intellij-idea'
 cask 'postman'
 
 # Apps
-cask 'atom'
+#cask 'atom'
 cask 'docker'
 cask 'dropbox'
 cask 'google-chrome'
@@ -73,4 +73,4 @@ cask 'font-source-serif-pro'
 # Install Mac App Store apps
 mas 'LastPass', id: 926036361
 mas 'Slack', id: 803453959
-mas 'Kindle', id: 405399194
+#mas 'Kindle', id: 405399194
