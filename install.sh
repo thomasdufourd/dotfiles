@@ -2,23 +2,30 @@
 
 echo "Setting up your Mac..."
 
-# Check for Homebrew and install if we don't have it
-if test ! $(which brew); then
-  /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-fi
+
+read -p "Is oh-my-zshell installed? (y/n)?" choice
+case "$choice" in 
+  y|Y ) echo "Ok, let's continue";;
+  n|N ) echo "You have to install Oh-my-Zsh";exit 0;;
+  * ) echo "invalid";;
+esac
+
+echo " -> giving you the rights to change brew"
+sudo chown -R $(whoami) /usr/local/*
+#sudo chown -R $(whoami) /usr/local/var/Homebrew
+#sudo chown -R $(whoami) /usr/local/homebrew
 
 # Update Homebrew recipes
+echo "First update brew"
 brew update
 
+
 # Install all our dependencies with bundle (See Brewfile)
+echo "tap homebrew/bundle" 
 brew tap homebrew/bundle
+echo "brew bundle"
 brew bundle
 
-# Make ZSH the default shell environment
-chsh -s $(which zsh)
-
-# Install global NPM packages
-npm install --global yarn
 
 # Create a Sites directory
 # This is a default directory for macOS user accounts but doesn't comes pre-installed
@@ -26,6 +33,7 @@ mkdir $HOME/Sites
 
 # Set macOS preferences
 # We will run this last because this will reload the shell
+echo "running .macos"
 source .macos
 
 # finished installing

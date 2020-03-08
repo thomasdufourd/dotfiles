@@ -65,8 +65,9 @@ plugins=(composer git git-extras httpie github npm sublime vagrant kubectl kube-
 # Environment variables
 if [[ "$ZSH_DEBUG" == "ON" ]]; then echo "[DEBUG] setting up some environment variables"; fi
 #export JAVA_HOME="$(/usr/libexec/java_home -v 1.8)"
-export JAVA_HOME="/Library/Java/JavaVirtualMachines/openjdk-11.0.2.jdk/Contents/Home"
-export MAVEN_HOME=$HOME/bin/apache-maven-3.3.9
+#export JAVA_HOME="/Library/Java/JavaVirtualMachines/openjdk-11.0.2.jdk/Contents/Home"
+export JAVA_HOME="$(/usr/libexec/java_home)"
+export MAVEN_HOME=$HOME/bin/apache-maven-3.6.3
 export POSTGRES_HOME=/Applications/Postgres.app/Contents/Versions/latest
 
 # Maven settings
@@ -96,8 +97,8 @@ source $ZSH/oh-my-zsh.sh
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
 
-export NVM_DIR="$HOME/.nvm"
-  . "/usr/local/opt/nvm/nvm.sh"
+#export NVM_DIR="$HOME/.nvm"
+#  . "/usr/local/opt/nvm/nvm.sh"
 
 # jenv (installed with brew
 export PATH="$HOME/.jenv/bin:$PATH"
@@ -125,6 +126,8 @@ export VAULT_ADDR="http://localhost:8200"
 
 # Enable 'kube-ps1'
 PROMPT=$PROMPT'$(kube_ps1) '
+# On Bekk Mac:
+kubeoff
 
 # miscellanous
 #-------------

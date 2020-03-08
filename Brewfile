@@ -6,8 +6,8 @@ tap 'homebrew/cask-versions'
 tap 'homebrew/bundle'
 
 # Install ZSH
-brew 'zsh'
-brew 'zsh-completions'
+###brew 'zsh' --> dont need already installed
+###brew 'zsh-completions'
 
 # Install GNU core utilities (those that come with macOS are outdated)
 brew 'coreutils'
@@ -16,7 +16,7 @@ brew 'coreutils'
 brew 'findutils'
 
 # Install Bash 4
-brew 'bash'
+####brew 'bash'
 
 # Install more recent versions of some macOS tools
 brew 'homebrew/dupes/grep'
@@ -48,7 +48,7 @@ cask 'docker'
 cask 'dropbox'
 cask 'google-chrome'
 cask 'google-drive'
-cask 'iterm2'
+#cask 'iterm2'
 cask 'java'
 cask 'spotify'
 cask 'sublime-text'
