@@ -65,8 +65,9 @@ plugins=(composer git git-extras httpie github npm sublime vagrant kubectl kube-
 # Environment variables
 if [[ "$ZSH_DEBUG" == "ON" ]]; then echo "[DEBUG] setting up some environment variables"; fi
 #export JAVA_HOME="$(/usr/libexec/java_home -v 1.8)"
-export JAVA_HOME="/Library/Java/JavaVirtualMachines/openjdk-11.0.2.jdk/Contents/Home"
-export MAVEN_HOME=$HOME/bin/apache-maven-3.3.9
+#export JAVA_HOME="/Library/Java/JavaVirtualMachines/openjdk-11.0.2.jdk/Contents/Home"
+export JAVA_HOME="/Library/Java/JavaVirtualMachines/openjdk-13.0.1.jdk/Contents/Home"
+export MAVEN_HOME=$HOME/bin/apache-maven-3.6.2
 export POSTGRES_HOME=/Applications/Postgres.app/Contents/Versions/latest
 
 # Maven settings
@@ -116,15 +117,22 @@ export PKG_CONFIG_PATH="/usr/local/opt/openssl/lib/pkgconfig"
 
 # kubectl (NAV) 
 #---------------
-export KUBECONFIG="/Users/thomasdufourd/Code/nav/kubeconfigs/config"
+export KUBECONFIG="$HOME/Code/nav/kubeconfigs/config"
 
 # Vault (NAV)
 # -----------
 #export VAULT_ADDR="https://vault.adeo.no" 
-export VAULT_ADDR="http://localhost:8200"
+#export VAULT_ADDR="http://localhost:8200"
+export VAULT_ADDR=https://vault.adeo.no
+alias vault="HTTPS_PROXY=socks5://localhost:14122 vault"
 
 # Enable 'kube-ps1'
 PROMPT=$PROMPT'$(kube_ps1) '
+
+# Gradle
+# ------
+export GRADLE_HOME=/usr/local/opt/gradle@6/bin
+export PATH="$GRADLE_HOME:$PATH"
 
 # miscellanous
 #-------------
