@@ -97,8 +97,11 @@ source $ZSH/oh-my-zsh.sh
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
 
-export NVM_DIR="$HOME/.nvm"
-  . "/usr/local/opt/nvm/nvm.sh"
+# As explained her: https://tecadmin.net/install-nvm-macos-with-homebrew/
+export NVM_DIR=~/.nvm
+source $(brew --prefix nvm)/nvm.sh
+#export NVM_DIR="$HOME/.nvm"
+#  . "/usr/local/opt/nvm/nvm.sh"
 
 # jenv (installed with brew
 export PATH="$HOME/.jenv/bin:$PATH"
@@ -135,6 +138,10 @@ PROMPT=$PROMPT'$(kube_ps1) '
 # ------
 export GRADLE_HOME=/usr/local/opt/gradle@6/bin
 export PATH="$GRADLE_HOME:$PATH"
+
+# Yarn
+#-----
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
 # miscellanous
 #-------------
