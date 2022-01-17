@@ -1,13 +1,13 @@
 # Taps
-tap 'caskroom/cask'
-tap 'caskroom/fonts'
-tap 'caskroom/versions'
+tap 'homebrew/cask'
+tap 'homebrew/cask-eid'
+tap 'homebrew/cask-fonts'
+tap 'homebrew/cask-versions'
 tap 'homebrew/bundle'
-tap 'homebrew/dupes'
 
 # Install ZSH
-brew 'zsh'
-brew 'zsh-completions'
+###brew 'zsh' --> dont need already installed
+###brew 'zsh-completions'
 
 # Install GNU core utilities (those that come with macOS are outdated)
 brew 'coreutils'
@@ -16,7 +16,7 @@ brew 'coreutils'
 brew 'findutils'
 
 # Install Bash 4
-brew 'bash'
+####brew 'bash'
 
 # Install more recent versions of some macOS tools
 brew 'homebrew/dupes/grep'
@@ -43,12 +43,12 @@ cask 'intellij-idea'
 cask 'postman'
 
 # Apps
-cask 'atom'
+#cask 'atom'
 cask 'docker'
 cask 'dropbox'
 cask 'google-chrome'
 cask 'google-drive'
-cask 'iterm2'
+#cask 'iterm2'
 cask 'java'
 cask 'spotify'
 cask 'sublime-text'
@@ -73,4 +73,4 @@ cask 'font-source-serif-pro'
 # Install Mac App Store apps
 mas 'LastPass', id: 926036361
 mas 'Slack', id: 803453959
-mas 'Kindle', id: 405399194
+#mas 'Kindle', id: 405399194

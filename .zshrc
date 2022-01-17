@@ -128,6 +128,8 @@ alias vault="HTTPS_PROXY=socks5://localhost:14122 vault"
 
 # Enable 'kube-ps1'
 PROMPT=$PROMPT'$(kube_ps1) '
+# On Bekk Mac:
+#kubeoff
 
 # Gradle
 # ------
