@@ -143,6 +143,24 @@ export PATH="$GRADLE_HOME:$PATH"
 #-----
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
+# GPG
+#----
+export GPG_TTY=$(tty)
+
+#----- nvm 
+#Få nvm til å bytte til node version som ligger i .nvmrc etter man navigerer til en mappe
+enter_directory() {
+  if [[ $PWD == $PREV_PWD ]]; then
+    return
+  fi
+
+  PREV_PWD=$PWD
+  [[ -f ".nvmrc" ]] && nvm use
+}
+
+export PROMPT_COMMAND=enter_directory
+
+
 # miscellanous
 #-------------
 # the following makes it possible to comment a command-line, just like bash
