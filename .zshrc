@@ -1,3 +1,7 @@
+# Version of this file
+# --------------------
+export THIS_ZSHRC_FILE_VERSION="1.1.0"
+
 ## Set ZSH_DEBUG to ON/OFF
 export ZSH_DEBUG="OFF"
 
@@ -136,7 +140,7 @@ PROMPT=$PROMPT'$(kube_ps1) '
 
 # Gradle
 # ------
-export GRADLE_HOME=/usr/local/opt/gradle@6/bin
+export GRADLE_HOME=/usr/local/opt/gradle@7/bin
 export PATH="$GRADLE_HOME:$PATH"
 
 # Yarn
@@ -160,8 +164,22 @@ enter_directory() {
 
 export PROMPT_COMMAND=enter_directory
 
+# Yarn global
+#------------
+PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
+# SDK man
+# -------
+# THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
 
 # miscellanous
 #-------------
 # the following makes it possible to comment a command-line, just like bash
 setopt interactivecomments
+
+# Log message --> .zshrc reloaded
+echo "zshrc v-$THIS_ZSHRC_FILE_VERSION loaded successfully ¯\_(ツ)_/¯"
+
