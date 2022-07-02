@@ -1,0 +1,31 @@
+== Create private/public key pair
+1- deal with username/host problem 
+ ssh-keygen -t rsa -C "thomas.dufourd@gmail.com" 
+
+2- Restrain rights
+ chmod  400 ~/.ssh/id_rsa
+ chmod  600 ~/.ssh/id_rsa.pub
+
+3- Copy and paste in GitHub
+ pbcopy < ~/.ssh/id_rsa.pub 
+
+
+== How to avoid prompt of passphrase? ==
+1- Check ssh-agent is running
+Commands: 
+ eval `ssh-agent -s`
+
+2- Update/create ssh config file and paste: 
+ vi ~/.ssh/config
+---
+Host *
+  UseKeychain yes
+  AddKeysToAgent yes
+  IdentityFile ~/.ssh/id_rsa
+---
+
+3 - Add private key to agent
+Command:  
+ ssh-add --apple-use-keychain ~/.ssh/id_rsa 
+
+
